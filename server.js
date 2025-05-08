@@ -113,6 +113,15 @@ app.use((err, req, res, next) => {
 app.get("/simple-ping", (req, res) => {
   res.json({ status: "OK", message: "Simple ping successful" });
 });
+// Add a simpler test endpoint that doesn't depend on MongoDB or other services
+app.get("/simple-test", (req, res) => {
+  res.json({
+    status: "OK",
+    message: "Server is running correctly",
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || "development",
+  });
+});
 
 // Configure multer for file uploads
 const storage = multer.diskStorage({
