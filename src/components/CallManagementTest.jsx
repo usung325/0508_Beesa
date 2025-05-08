@@ -10,7 +10,8 @@ function CallManagementTest() {
   const [uploadStatus, setUploadStatus] = useState("");
 
   // The API base URL - change to match your backend server
-  const API_URL = "http://localhost:5001"; // Direct connection instead of proxy
+  // const API_URL = "http://localhost:5001"; // Direct connection instead of proxy
+  const API_URL = "https://beesa.vercel.app/";
 
   // Fetch calls with improved error handling
   const fetchCalls = async () => {
