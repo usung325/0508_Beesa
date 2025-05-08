@@ -86,6 +86,25 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "dist")));
 }
 
+// 3. Error handling
+// Add global error handling middleware
+app.use((err, req, res, next) => {
+  console.error("Server error:", err);
+  res.status(500).json({ error: "Server error", message: err.message });
+});
+
+// 2. Base route
+// Add a root route handler that returns a simple response
+app.get("/", (req, res) => {
+  res.send("Call Management API is running");
+});
+
+// 4. Vercel-specific route handling
+// If API routes aren't working, try a simpler route that doesn't use Express Router
+app.get("/simple-ping", (req, res) => {
+  res.json({ status: "OK", message: "Simple ping successful" });
+});
+
 // Test ping route
 app.get("/api/test/ping", (req, res) => {
   res.status(200).json({
