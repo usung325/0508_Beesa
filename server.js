@@ -54,8 +54,8 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://127.0.0.1:3000",
-      "https://beesa-8bci30qjp-yoo-sung-lees-projects.vercel.app",
       "https://beesa.vercel.app/",
+      "https://beesa-8bci30qjp-yoo-sung-lees-projects.vercel.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
