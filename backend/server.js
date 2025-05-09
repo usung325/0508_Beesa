@@ -54,6 +54,8 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://127.0.0.1:3000",
+      "https://0508-beesa.vercel.app/",
+      "https://0508-beesa-i3lu9h1u5-yoo-sung-lees-projects.vercel.app/",
       "https://beesa.vercel.app/",
       "https://beesa-8bci30qjp-yoo-sung-lees-projects.vercel.app",
     ],
