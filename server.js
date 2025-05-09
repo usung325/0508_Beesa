@@ -97,10 +97,10 @@ app.get("/api/test/ping", (req, res) => {
   });
 });
 // 2. Base route
-// Add a root route handler that returns a simple response
-app.get("/", (req, res) => {
-  res.send("Call Management API is running");
-});
+// // Add a root route handler that returns a simple response
+// app.get("/", (req, res) => {
+//   res.send("Call Management API is running");
+// });
 
 // 3. Error handling
 // Add global error handling middleware
