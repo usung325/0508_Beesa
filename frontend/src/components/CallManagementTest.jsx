@@ -11,7 +11,11 @@ function CallManagementTest() {
 
   // The API base URL - change to match your backend server
   // const API_URL = "http://localhost:5001"; // Direct connection instead of proxy
-  const API_URL = "https://beesa.vercel.app";
+  // const API_URL = "https://beesa.vercel.app";
+  const API_URL =
+    process.env.NODE_ENV === "production"
+      ? "/api" // In production, API will be at the same domain
+      : "http://localhost:5001"; // Your local development API
 
   // Fetch calls with improved error handling
   const fetchCalls = async () => {

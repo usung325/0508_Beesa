@@ -86,6 +86,18 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "dist")));
 }
 
+// In production, serve static files from frontend/dist
+if (process.env.NODE_ENV === "production") {
+  // The path should point to where your frontend build files are
+  const frontendBuildPath = path.join(__dirname, "../frontend/dist");
+  app.use(express.static(frontendBuildPath));
+
+  // For any route not found in the API, serve the index.html
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(frontendBuildPath, "index.html"));
+  });
+}
+
 // Test ping route
 app.get("/api/test/ping", (req, res) => {
   res.status(200).json({
